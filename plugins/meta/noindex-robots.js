@@ -1,4 +1,20 @@
-import * as oembedUtils from '../../lib/plugins/system/oembed/oembedUtils.js';
+function hasOembedLinks(meta) {
+    // Allow misspelled discovery links.
+    if (meta && meta.alternative && !meta.alternate) {
+        meta.alternate = meta.alternative;
+        delete meta.alternative;
+    }
+
+    var alternate = meta && meta.alternate;
+    if (alternate && !(alternate instanceof Array)) {
+        alternate = [alternate];
+        meta.alternate = alternate;
+    }
+
+    return !!(alternate && alternate.some(function(link) {
+        return link && /^(application|text)\/(xml|json)\+oembed$/i.test(link.type);
+    }));
+}
 
 export default {
 
@@ -10,7 +26,7 @@ export default {
             && !meta.description
             && !meta.og
             && !meta.twitter
-            && /* !oembedLinks */ !oembedUtils.findOembedLinks(null, meta) // null if length == 0.
+            && /* !oembedLinks */ !hasOembedLinks(meta)
             && /* !iframelyTargeted */ !Object.keys(meta).some(key => key.indexOf('iframely') === 0)
             && !options.allowNoIndex
             ? {
