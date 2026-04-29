@@ -1,0 +1,83 @@
+{
+    "domains": {
+        "*.soundcloud.com": {
+            "date": 1776345036360,
+            "twitter": {
+                "player": ["allow", "audio", "horizontal"]
+            },
+            "oembed": {
+                "rich": ["allow", "player", "ssl", "horizontal", "audio"]
+            },
+            "og": {
+                "video": "deny"
+            }
+        },
+        "*.spotify.com": {
+            "date": 1772015187304,
+            "oembed": {
+                "rich": ["allow", "player", "ssl", "horizontal", "audio", "playlist"],
+                "video": ["allow", "responsive"]
+            }
+        },
+        "spotify.link": {
+            "date": 1772015187304,
+            "oembed": {
+                "rich": ["allow", "player", "ssl", "horizontal", "audio", "playlist"],
+                "video": ["allow", "responsive"]
+            }
+        },
+        "music.apple.com": {
+            "date": 1768903388611,
+            "oembed": {
+                "rich": ["allow", "player", "horizontal"]
+            },
+            "og": {
+                "video": "deny"
+            },
+            "html-meta": {
+                "embedURL": ["allow", "responsive"]
+            }
+        },
+        "www.behance.net": {
+            "date": 1762437629581,
+            "oembed": {
+                "rich": ["allow", "responsive", "summary"]
+            },
+            "html-meta": {
+                "embedURL": "deny"
+            }
+        },
+        "www.youtube.com": {
+            "date": 1762437819690,
+            "oembed": {
+                "video": ["allow", "responsive", "ssl"],
+                "video-autoplay": "autoplay=1"
+            },
+            "og": {
+                "video": ["allow", "responsive", "ssl"]
+            },
+            "twitter": {
+                "player": ["allow", "responsive"]
+            },
+            "html-meta": {
+                "embedURL": "deny"
+            }
+        },
+        "youtu.be": {
+            "date": 1762437819690,
+            "oembed": {
+                "video": ["allow", "responsive", "ssl"],
+                "video-autoplay": "autoplay=1"
+            },
+            "og": {
+                "video": ["allow", "responsive", "ssl"]
+            },
+            "twitter": {
+                "player": ["allow", "responsive"]
+            },
+            "html-meta": {
+                "embedURL": "deny"
+            }
+        }
+    }
+}

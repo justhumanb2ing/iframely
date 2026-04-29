@@ -25,10 +25,18 @@
 
         WHITELIST_LOAD_ON_INIT: true,   // Whitelist is always loaded by lib init. Otherwise use `initializeWhitelistLoader();`.
         WHITELIST_DIR: './whitelist',   // Set `null` to disable loading from file.
-        WHITELIST_URL: 'https://iframely.com/qa/domains.json',
+        WHITELIST_URL: null,
         WHITELIST_URL_RELOAD_PERIOD: 60 * 60 * 1000,  // will reload WL every hour, if no local files are found in /whitelist folder
 
         WHITELIST_WILDCARD: {},
+
+        ENABLED_DOMAIN_PLUGINS: [
+            'youtube.com',
+            'spotify.com',
+            'spotify.com-meta-fallback',
+            'soundcloud.com',
+            'itunes.apple.com'
+        ],
 
         // Default cache engine to prevent warning.
         CACHE_ENGINE: 'node-cache',
