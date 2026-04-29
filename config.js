@@ -15,6 +15,9 @@
     const config = {
 
         baseAppUrl: "",
+        allowedOrigins: [
+            "https://harune.me"
+        ],
         port: 8061,
         relativeStaticUrl: "/s",
         use_http2: true,
